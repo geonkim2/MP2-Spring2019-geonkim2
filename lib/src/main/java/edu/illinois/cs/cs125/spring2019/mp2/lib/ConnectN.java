@@ -85,7 +85,7 @@ public class ConnectN {
      * @return the current board width
      */
     public int getWidth() {
-
+        return this.getBoard().length;
     }
 
     /**
@@ -97,7 +97,8 @@ public class ConnectN {
      * @return true if the width was set successfully, false on error
      */
     public boolean setWidth(int setWidth) {
-
+        this.getBoard().length = setWidth;
+        return true;
     }
 
     /**
@@ -105,6 +106,7 @@ public class ConnectN {
      * @return the current board height
      */
     public int getHeight() {
+        return this.getBoard()[0].length;
 
     }
 
@@ -117,7 +119,8 @@ public class ConnectN {
      * @return true if the height was set successfully, false on error
      */
     public boolean setHeight(int setHeight) {
-
+        this.getBoard()[0].length = setHeight;
+        return true;
     }
 
     /**
@@ -125,7 +128,7 @@ public class ConnectN {
      * @return the current board N value
      */
     public int getN() {
-
+        return this.getN();
     }
 
     /**
