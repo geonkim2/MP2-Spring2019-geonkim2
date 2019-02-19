@@ -85,6 +85,7 @@ public class ConnectN {
      * @return the current board width
      */
     public int getWidth() {
+        return 0;
         return this.getBoard().length;
     }
 
@@ -106,8 +107,8 @@ public class ConnectN {
      * @return the current board height
      */
     public int getHeight() {
+        return 0;
         return this.getBoard()[0].length;
-
     }
 
     /**
@@ -128,7 +129,7 @@ public class ConnectN {
      * @return the current board N value
      */
     public int getN() {
-        return this.getN();
+        return 0;
     }
 
     /**
@@ -147,7 +148,7 @@ public class ConnectN {
      * @return true if N was set successfully, false otherwise
      */
     public boolean setN(int newN) {
-
+        return true;
     }
 
     /**
@@ -172,7 +173,7 @@ public class ConnectN {
      * @return true if the move succeeds, false on error
      */
     public boolean setBoardAt(Player player, int setX, int setY) {
-
+        return true;
     }
 
     /**
@@ -188,7 +189,7 @@ public class ConnectN {
      * @return true if the move succeeds, false on error
      */
     public boolean setBoardAt(Player player, int setX) {
-
+        return true;
     }
 
     /**
@@ -200,7 +201,7 @@ public class ConnectN {
      * @return the player whose tile is at that position, or null if nobody has played at that position
      */
     public Player getBoardAt(int getX, int getY) {
-
+        return null;
     }
 
     /**
@@ -211,7 +212,7 @@ public class ConnectN {
      * @return a copy of the current board
      */
     public Player[][] getBoard() {
-
+        return null;
     }
 
     /**
@@ -219,7 +220,7 @@ public class ConnectN {
      * @return the winner of the game, or null if the game has not ended
      */
     public Player getWinner() {
-
+        return null;
     }
 
     /**
@@ -232,7 +233,7 @@ public class ConnectN {
      * @return the new ConnectN instance, or null if the parameters are invalid
      */
     public static ConnectN create(int width, int height, int n) {
-
+        return null;
     }
 
     /**
@@ -245,7 +246,7 @@ public class ConnectN {
      * @return an array of new ConnectN instances, or null if the parameters are invalid
      */
     public static ConnectN[] createMany(int number, int width, int height, int n) {
-
+        return null;
     }
 
     /**
@@ -260,7 +261,7 @@ public class ConnectN {
      * @return true if the boards are the same, false otherwise
      */
     public static boolean compareBoards(ConnectN firstBoard, ConnectN secondBoard) {
-
+        return true;
     }
 
     /**
@@ -271,6 +272,6 @@ public class ConnectN {
      * @return true if all passed boards are the same, false otherwise
      */
     public static boolean compareBoards(ConnectN... boards) {
-
+        return true;
     }
 }
