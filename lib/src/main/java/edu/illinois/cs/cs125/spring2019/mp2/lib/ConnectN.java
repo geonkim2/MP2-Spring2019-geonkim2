@@ -36,11 +36,18 @@ public class ConnectN {
      */
     public static final int MIN_N = 4;
 
+    /** width of the board. */
+    private int width;
+    /** height of the board. */
+    private int height;
+    /** N of the board. */
+    private int N;
 
     /**
      * Creates a new ConnectN board with a given width, height, and N value.
      * Note that this method should not reject invalid values.
-     * Constructors must return a new object, or throw an exception, so there is no way for you to reject bad parameters yet.
+     * Constructors must return a new object, or throw an exception,
+     * so there is no way for you to reject bad parameters yet.
      * Instead, attempts to set the width, height, or N value to invalid value should lead to them being uninitialized.
      * For example, new ConnectN(1, 10, 4) should return a ConnectN game with width=0, height=10, and N=0,
      * since 1 is an invalid width (too small) and N cannot be set until the width is defined.
@@ -48,14 +55,19 @@ public class ConnectN {
      * @param setHeight - the height for the new ConnectN board
      * @param setN - the N value for the new ConnectN board
      */
-    public ConnectN(int setWidth, int setHeight, int setN) {
-
+    public ConnectN(final int setWidth, final int setHeight, final int setN) {
+        System.out.println("ConnectN with three inputs");
+        this.width = setWidth;
+        this.height = setHeight;
+        this.N = setN;
     }
 
     /**
      * Create a new ConnectN board with uninitialized width, height, and N value.
      */
     public ConnectN() {
+        System.out.println("ConnectN with no input");
+
 
     }
 
@@ -65,19 +77,23 @@ public class ConnectN {
      * @param setWidth - the width for the new ConnectN board
      * @param setHeight - the height for the new ConnectN board
      */
-    public ConnectN(int setWidth, int setHeight) {
-
+    public ConnectN(final int setWidth, final int setHeight) {
+        System.out.println("ConnectN with two inputs");
+        this.width = setWidth;
+        this.height = setHeight;
     }
 
     /**
      * Create a new ConnectN board with dimensions and N value copied from another board.
      * This is a so-called copy constructor.
-     * It takes another object of the same type (in this case, a ConnectN board) and initializes a new object using values from the existing object.
+     * It takes another object of the same type (in this case, a ConnectN board)
+     * and initializes a new object using values from the existing object.
      * In this case, you should use the width, height, and N value from the passed board.
      * You should not copy any other features of the other board like its board state.
      * @param otherBoard - the ConnectN board to copy width, height, and N from
      */
-    public ConnectN(ConnectN otherBoard) {
+    public ConnectN(final ConnectN otherBoard) {
+        System.out.println("ConnectN otherBoard");
 
     }
 
@@ -98,7 +114,7 @@ public class ConnectN {
      * @param setWidth - the new width to set
      * @return true if the width was set successfully, false on error
      */
-    public boolean setWidth(int setWidth) {
+    public boolean setWidth(final int setWidth) {
         //this.getBoard().length = setWidth;
         return true;
     }
@@ -120,7 +136,7 @@ public class ConnectN {
      * @param setHeight - the new height to set
      * @return true if the height was set successfully, false on error
      */
-    public boolean setHeight(int setHeight) {
+    public boolean setHeight(final int setHeight) {
         //this.getBoard()[0].length = setHeight;
         return true;
     }
@@ -142,13 +158,15 @@ public class ConnectN {
      * N can be at most 1 less than the maximum of the width and height
      * Games with large N values relative to their dimension are fairly uninteresting,
      * since it is trivial for a player to block their opponent and cause a draw.
-     * But you should only enforce the constraint that the N value is at most 1 less than the maximum of the width and height.
-     * So on a 6x10 board, the minimum N value is 4 and the maximum is 9. On a 10x8 board, the minimum is 4 and the maximum is 9.
+     * But you should only enforce the constraint
+     * that the N value is at most 1 less than the maximum of the width and height.
+     * So on a 6x10 board, the minimum N value is 4 and the maximum is 9.
+     * On a 10x8 board, the minimum is 4 and the maximum is 9.
      * Setting N should never affect the width or the height.
      * @param newN - the new N
      * @return true if N was set successfully, false otherwise
      */
-    public boolean setN(int newN) {
+    public boolean setN(final int newN) {
         return true;
     }
 
@@ -166,14 +184,15 @@ public class ConnectN {
      * A tile cannot be played at a particular location if there are empty squares below it.
      * Put another way, a tile can only be placed on top of a stack of existing tiles.
      * If the requested location is invalid, you should return false and no tile should be added to the board.
-     * If a given play results in the game ending, future plays should fail and getWinner() should return the player that won.
+     * If a given play results in the game ending, future plays should fail
+     * and getWinner() should return the player that won.
      * Note that the first successful call to setBoardAt represents the start of game.
      * @param player - the player attempting the move
      * @param setX - the X coordinate that they are trying to place a tile at
      * @param setY - the Y coordinate that they are trying to place a tile at
      * @return true if the move succeeds, false on error
      */
-    public boolean setBoardAt(Player player, int setX, int setY) {
+    public boolean setBoardAt(final Player player, final int setX, final int setY) {
         return true;
     }
 
@@ -189,19 +208,20 @@ public class ConnectN {
      * @param setX - the X coordinate for the stack that they are trying to drop a tile in
      * @return true if the move succeeds, false on error
      */
-    public boolean setBoardAt(Player player, int setX) {
+    public boolean setBoardAt(final Player player, final int setX) {
         return true;
     }
 
     /**
      * Get the player at a specific board position.
-     * Should return null if the board position is invalid, if the game has not started, or if nobody has played yet at that position.
+     * Should return null if the board position is invalid, if the game has not started,
+     * or if nobody has played yet at that position.
      * Otherwise returns the player whose tile is at that position.
      * @param getX - the X coordinate to get the player at
      * @param getY - the Y coordinate to get the player at
      * @return the player whose tile is at that position, or null if nobody has played at that position
      */
-    public Player getBoardAt(int getX, int getY) {
+    public Player getBoardAt(final int getX, final int getY) {
         return null;
     }
 
@@ -226,27 +246,29 @@ public class ConnectN {
 
     /**
      * Class method to create a new ConnectN board.
-     * Unlike the class constructor, static methods can return null on failure. Sometimes these methods are referred to as static factory methods.
+     * Unlike the class constructor, static methods can return null on failure.
+     * Sometimes these methods are referred to as static factory methods.
      * This method should return null if its arguments are invalid. Otherwise, it should return a new ConnectN instance.
      * @param width - the width of the new ConnectN instance to create
      * @param height - the height of the new ConnectN instance to create
      * @param n - the n value of the new ConnectN instance to create
      * @return the new ConnectN instance, or null if the parameters are invalid
      */
-    public static ConnectN create(int width, int height, int n) {
+    public static ConnectN create(final int width, final int height, final int n) {
         return null;
     }
 
     /**
      * Creates multiple new ConnectN instances.
-     * Like create(), createMany should return null if the parameters are invalid. Otherwise, it should return an array of newly-created ConnectN instances.
+     * Like create(), createMany should return null if the parameters are invalid. Otherwise,
+     * it should return an array of newly-created ConnectN instances.
      * @param number - the number of new ConnectN instances to create
      * @param width - the width of the new ConnectN instance to create
      * @param height - the height of the new ConnectN instance to create
      * @param n - the n value of the new ConnectN instance to create
      * @return an array of new ConnectN instances, or null if the parameters are invalid
      */
-    public static ConnectN[] createMany(int number, int width, int height, int n) {
+    public static ConnectN[] createMany(final int number, final int width, final int height, final int n) {
         return null;
     }
 
@@ -261,7 +283,7 @@ public class ConnectN {
      * @param secondBoard - the second ConnectN board to compare
      * @return true if the boards are the same, false otherwise
      */
-    public static boolean compareBoards(ConnectN firstBoard, ConnectN secondBoard) {
+    public static boolean compareBoards(final ConnectN firstBoard, final ConnectN secondBoard) {
         return true;
     }
 
@@ -272,7 +294,7 @@ public class ConnectN {
      * @param boards - the array of ConnectN boards to compare
      * @return true if all passed boards are the same, false otherwise
      */
-    public static boolean compareBoards(ConnectN... boards) {
+    public static boolean compareBoards(final ConnectN... boards) {
         return true;
     }
 }
