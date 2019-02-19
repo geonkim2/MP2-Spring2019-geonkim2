@@ -9,7 +9,7 @@ package edu.illinois.cs.cs125.spring2019.mp2.lib;
  * Other variations allow more than two players.
  * In any case, the ConnectN class only monitors gameplay to determine when the game has ended, then determines the winning player.
  */
-public class ConnectN extends java.lang.Object {
+public class ConnectN {
 
     /**
      * Minimum board width is 6.
