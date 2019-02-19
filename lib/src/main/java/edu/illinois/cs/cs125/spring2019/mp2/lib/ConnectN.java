@@ -36,6 +36,7 @@ public class ConnectN {
      */
     public static final int MIN_N = 4;
 
+
     /**
      * Creates a new ConnectN board with a given width, height, and N value.
      * Note that this method should not reject invalid values.
@@ -86,7 +87,7 @@ public class ConnectN {
      */
     public int getWidth() {
         return 0;
-        return this.getBoard().length;
+        //return this.getBoard().length;
     }
 
     /**
@@ -98,7 +99,7 @@ public class ConnectN {
      * @return true if the width was set successfully, false on error
      */
     public boolean setWidth(int setWidth) {
-        this.getBoard().length = setWidth;
+        //this.getBoard().length = setWidth;
         return true;
     }
 
@@ -108,7 +109,7 @@ public class ConnectN {
      */
     public int getHeight() {
         return 0;
-        return this.getBoard()[0].length;
+        //return this.getBoard()[0].length;
     }
 
     /**
@@ -120,7 +121,7 @@ public class ConnectN {
      * @return true if the height was set successfully, false on error
      */
     public boolean setHeight(int setHeight) {
-        this.getBoard()[0].length = setHeight;
+        //this.getBoard()[0].length = setHeight;
         return true;
     }
 
