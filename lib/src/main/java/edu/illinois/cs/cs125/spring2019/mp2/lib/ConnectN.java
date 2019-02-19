@@ -67,8 +67,6 @@ public class ConnectN {
      */
     public ConnectN() {
         System.out.println("ConnectN with no input");
-
-
     }
 
     /**
