@@ -2,12 +2,15 @@ package edu.illinois.cs.cs125.spring2019.mp2.lib;
 
 /**
  * A class that implements a Connect4-like game.
- * ConnectN is a tile-based game played on a grid. Like Connect4, players try to get a run of tiles of a given length (N).
+ * ConnectN is a tile-based game played on a grid.
+ * Like Connect4, players try to get a run of tiles of a given length (N).
  * However, unlike Connect4 ConnectN does not check diagonal runs, although you can add this feature if you like.
  * This ConnectN class is also not responsible for tracking players turns.
- * That could be done by a separate class, allowing for game variations in which players can sometimes take more than one turn in a row.
+ * That could be done by a separate class,
+ * allowing for game variations in which players can sometimes take more than one turn in a row.
  * Other variations allow more than two players.
- * In any case, the ConnectN class only monitors gameplay to determine when the game has ended, then determines the winning player.
+ * In any case, the ConnectN class only monitors gameplay to determine when the game has ended,
+ * then determines the winning player.
  */
 public class ConnectN {
 
