@@ -57,9 +57,29 @@ public class ConnectN {
      */
     public ConnectN(final int setWidth, final int setHeight, final int setN) {
         System.out.println("ConnectN with three inputs");
-        this.width = setWidth;
-        this.height = setHeight;
-        this.N = setN;
+        boolean isValid = true;
+        if (MIN_WIDTH <= setWidth && setWidth <= MAX_WIDTH) {
+            this.width = setWidth;
+        } else {
+            isValid = false;
+            this.width = 0;
+        }
+        if (MIN_HEIGHT <= setHeight && setHeight <= MAX_HEIGHT) {
+            this.height = setHeight;
+        } else {
+            isValid = false;
+            this.height = 0;
+        }
+        if (isValid) {
+            if (setN >= MIN_N && setN <= this.width && setN <= this.height) {
+                this.N = setN;
+            } else {
+                this.N = 0;
+            }
+        } else {
+            this.N = 0;
+        }
+        System.out.println("width = " + this.width + ", height = " + this.height + ", N = " + this.N);
     }
 
     /**
@@ -77,8 +97,16 @@ public class ConnectN {
      */
     public ConnectN(final int setWidth, final int setHeight) {
         System.out.println("ConnectN with two inputs");
-        this.width = setWidth;
-        this.height = setHeight;
+        if (MIN_WIDTH <= setWidth && setWidth <= MAX_WIDTH) {
+            this.width = setWidth;
+        } else {
+            this.width = 0;
+        }
+        if (MIN_HEIGHT <= setHeight && setHeight <= MAX_HEIGHT) {
+            this.height = setHeight;
+        } else {
+            this.height = 0;
+        }
     }
 
     /**
@@ -92,7 +120,9 @@ public class ConnectN {
      */
     public ConnectN(final ConnectN otherBoard) {
         System.out.println("ConnectN otherBoard");
-
+        this.width = otherBoard.width;
+        this.height = otherBoard.height;
+        this.N = otherBoard.N;
     }
 
     /**
@@ -100,8 +130,7 @@ public class ConnectN {
      * @return the current board width
      */
     public int getWidth() {
-        return 0;
-        //return this.getBoard().length;
+        return this.width;
     }
 
     /**
@@ -122,8 +151,7 @@ public class ConnectN {
      * @return the current board height
      */
     public int getHeight() {
-        return 0;
-        //return this.getBoard()[0].length;
+        return this.height;
     }
 
     /**
@@ -144,7 +172,7 @@ public class ConnectN {
      * @return the current board N value
      */
     public int getN() {
-        return 0;
+        return this.N;
     }
 
     /**
