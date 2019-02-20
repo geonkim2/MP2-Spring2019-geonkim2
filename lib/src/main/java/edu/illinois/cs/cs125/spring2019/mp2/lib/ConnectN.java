@@ -41,7 +41,7 @@ public class ConnectN {
     /** height of the board. */
     private int height;
     /** N of the board. */
-    private int N;
+    private int n;
 
     /**
      * Creates a new ConnectN board with a given width, height, and N value.
@@ -72,14 +72,14 @@ public class ConnectN {
         }
         if (isValid) {
             if (setN >= MIN_N && setN <= this.width && setN <= this.height) {
-                this.N = setN;
+                this.n = setN;
             } else {
-                this.N = 0;
+                this.n = 0;
             }
         } else {
-            this.N = 0;
+            this.n = 0;
         }
-        System.out.println("width = " + this.width + ", height = " + this.height + ", N = " + this.N);
+        System.out.println("width = " + this.width + ", height = " + this.height + ", N = " + this.n);
     }
 
     /**
@@ -122,7 +122,7 @@ public class ConnectN {
         System.out.println("ConnectN otherBoard");
         this.width = otherBoard.width;
         this.height = otherBoard.height;
-        this.N = otherBoard.N;
+        this.n = otherBoard.n;
     }
 
     /**
@@ -131,6 +131,7 @@ public class ConnectN {
      */
     public int getWidth() {
         System.out.println("getWidth");
+        System.out.println("current width = " + this.width);
         return this.width;
     }
 
@@ -147,12 +148,13 @@ public class ConnectN {
         boolean isValid = false;
         if (MIN_WIDTH <= setWidth && setWidth <= MAX_WIDTH) {
             this.width = setWidth;
-            if (setWidth >= this.N) {
+            if (setWidth >= this.n) {
                 isValid = true;
             } else {
-                this.N = 0;
+                this.n = 0;
             }
         }
+        System.out.println("setWidth = " + setWidth + ", current width = " + this.width + ", " + isValid);
         return isValid;
     }
 
@@ -162,6 +164,7 @@ public class ConnectN {
      */
     public int getHeight() {
         System.out.println("getHeight");
+        System.out.println("current height = " + this.height);
         return this.height;
     }
 
@@ -177,13 +180,13 @@ public class ConnectN {
         System.out.println("setHeight");
         boolean isValid = false;
         if (MIN_HEIGHT <= setHeight && setHeight <= MAX_HEIGHT) {
+            isValid = true;
             this.height = setHeight;
-            if (setHeight >= this.N) {
-                isValid = true;
-            } else {
-                this.N = 0;
+            if (setHeight <= this.n) {
+                this.n = 0;
             }
         }
+        System.out.println("setHeight = " + setHeight + ", current height = " + this.height + ", " + isValid);
         return isValid;
     }
 
@@ -193,7 +196,8 @@ public class ConnectN {
      */
     public int getN() {
         System.out.println("getN");
-        return this.N;
+        System.out.println("N = " + this.n);
+        return this.n;
     }
 
     /**
@@ -214,7 +218,18 @@ public class ConnectN {
      * @return true if N was set successfully, false otherwise
      */
     public boolean setN(final int newN) {
-        System.out.println("setN");
+        System.out.println("setN as newN = " + newN);
+        System.out.println("current width = " + this.width + ", current height = " + this.height);
+        if (this.width == 0 || this.height == 0 || newN < MIN_N) {
+            System.out.println("fail 1st case");
+            return false;
+        }
+        if (newN >= Math.max(this.width, this.height)) {
+            System.out.println("fail 2nd case");
+            return false;
+        }
+        this.n = newN;
+        System.out.println("newN = " + newN + ", setting success");
         return true;
     }
 
