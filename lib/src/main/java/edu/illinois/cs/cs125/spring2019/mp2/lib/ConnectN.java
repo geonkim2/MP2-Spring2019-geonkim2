@@ -130,6 +130,7 @@ public class ConnectN {
      * @return the current board width
      */
     public int getWidth() {
+        System.out.println("getWidth");
         return this.width;
     }
 
@@ -142,8 +143,17 @@ public class ConnectN {
      * @return true if the width was set successfully, false on error
      */
     public boolean setWidth(final int setWidth) {
-        //this.getBoard().length = setWidth;
-        return true;
+        System.out.println("setWidth");
+        boolean isValid = false;
+        if (MIN_WIDTH <= setWidth && setWidth <= MAX_WIDTH) {
+            this.width = setWidth;
+            if (setWidth >= this.N) {
+                isValid = true;
+            } else {
+                this.N = 0;
+            }
+        }
+        return isValid;
     }
 
     /**
@@ -151,6 +161,7 @@ public class ConnectN {
      * @return the current board height
      */
     public int getHeight() {
+        System.out.println("getHeight");
         return this.height;
     }
 
@@ -163,8 +174,17 @@ public class ConnectN {
      * @return true if the height was set successfully, false on error
      */
     public boolean setHeight(final int setHeight) {
-        //this.getBoard()[0].length = setHeight;
-        return true;
+        System.out.println("setHeight");
+        boolean isValid = false;
+        if (MIN_HEIGHT <= setHeight && setHeight <= MAX_HEIGHT) {
+            this.height = setHeight;
+            if (setHeight >= this.N) {
+                isValid = true;
+            } else {
+                this.N = 0;
+            }
+        }
+        return isValid;
     }
 
     /**
@@ -172,6 +192,7 @@ public class ConnectN {
      * @return the current board N value
      */
     public int getN() {
+        System.out.println("getN");
         return this.N;
     }
 
@@ -193,6 +214,7 @@ public class ConnectN {
      * @return true if N was set successfully, false otherwise
      */
     public boolean setN(final int newN) {
+        System.out.println("setN");
         return true;
     }
 
